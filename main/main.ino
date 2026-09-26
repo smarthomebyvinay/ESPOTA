@@ -9,13 +9,19 @@
 #include <ArduinoJson.h>
 #include <mbedtls/sha256.h>
 
-// Change these for your deployment. Use a unique AP password per product/device.
+// For another repository under the same GitHub account, change only OTA_PROJECT_NAME.
+// Keep OTA_DEVICE_MODEL the same for devices that share a firmware manifest.
+static const char *OTA_PROJECT_NAME = "ESPOTA";
+static const char *OTA_GITHUB_OWNER = "smarthomebyvinay";
 static const char *OTA_DEVICE_MODEL = "esp32dev";
 static const char *OTA_FIRMWARE_VERSION = "0.1.3";
-static const char *OTA_MANIFEST_URL =
-    "https://raw.githubusercontent.com/smarthomebyvinay/ESPOTA/main/firmware/manifest.json";
 static const char *SETUP_AP_PREFIX = "ESP32-Setup-";
 static const char *SETUP_AP_PASSWORD = "configure32"; // At least 8 characters.
+
+static String getManifestUrl() {
+  return String("https://raw.githubusercontent.com/") + OTA_GITHUB_OWNER + "/" +
+         OTA_PROJECT_NAME + "/main/firmware/manifest.json";
+}
 
 void app_setup();
 void app_loop();
@@ -215,7 +221,7 @@ static bool checkManifest(String &message) {
   }
   HTTPClient http;
   http.setTimeout(15000);
-  if (!http.begin(OTA_MANIFEST_URL)) { message = "Could not open manifest URL"; return false; }
+  if (!http.begin(getManifestUrl())) { message = "Could not open manifest URL"; return false; }
   const int status = http.GET();
   if (status != HTTP_CODE_OK) {
     message = "Manifest server returned HTTP " + String(status);

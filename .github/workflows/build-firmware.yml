@@ -87,11 +87,12 @@ jobs:
               raise SystemExit("Could not find OTA_DEVICE_MODEL in main/main.ino")
 
           version = os.environ["FIRMWARE_VERSION"]
+          repository = os.environ["GITHUB_REPOSITORY"]
           data = binary.read_bytes()
           manifest = {
               "device": match.group(1),
               "version": version,
-              "url": f"https://github.com/smarthomebyvinay/ESPOTA/releases/download/v{version}/firmware.bin",
+              "url": f"https://github.com/{repository}/releases/download/v{version}/firmware.bin",
               "size": len(data),
               "sha256": hashlib.sha256(data).hexdigest(),
           }

@@ -14,7 +14,7 @@
 static const char *OTA_PROJECT_NAME = "ESPOTA";
 static const char *OTA_GITHUB_OWNER = "smarthomebyvinay";
 static const char *OTA_DEVICE_MODEL = "esp32dev";
-static const char *OTA_FIRMWARE_VERSION = "0.1.4";
+static const char *OTA_FIRMWARE_VERSION = "0.1.6";
 static const char *SETUP_AP_PREFIX = "ESP32-Setup-";
 static const char *SETUP_AP_PASSWORD = "configure32"; // At least 8 characters.
 

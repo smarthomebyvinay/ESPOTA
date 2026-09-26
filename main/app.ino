@@ -7,7 +7,7 @@
 
 static bool ledIsOn = false;
 static unsigned long lastLedChange = 0;
-static const unsigned long LED_INTERVAL_MS = 1000;
+static const unsigned long LED_INTERVAL_MS = 2000;
 
 void app_setup() {
   pinMode(LED_BUILTIN, OUTPUT);

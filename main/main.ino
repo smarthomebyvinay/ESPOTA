@@ -11,7 +11,7 @@
 
 // Change these for your deployment. Use a unique AP password per product/device.
 static const char *OTA_DEVICE_MODEL = "esp32dev";
-static const char *OTA_FIRMWARE_VERSION = "0.1.1";
+static const char *OTA_FIRMWARE_VERSION = "0.1.3";
 static const char *OTA_MANIFEST_URL =
     "https://raw.githubusercontent.com/smarthomebyvinay/ESPOTA/main/firmware/manifest.json";
 static const char *SETUP_AP_PREFIX = "ESP32-Setup-";

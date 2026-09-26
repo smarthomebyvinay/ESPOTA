@@ -1,6 +1,6 @@
 {
   "device": "esp32dev",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "url": "https://github.com/smarthomebyvinay/ESPOTA/releases/download/v0.1.1/firmware.bin",
   "size": 1084896,
   "sha256": "6bc0a3926b528b9c652b52ff002c28e5ad58ad0c4c499f65a834fccdb6a7721b"
